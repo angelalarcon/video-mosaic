@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Arial';
+  overflow-x: hidden;
 }
 
 * {
@@ -30,12 +31,177 @@ header * {
 }
 
 header .logo {
-  width: auto;
-  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.3);
+  width: 100px;
+  transition: all 0.5s;
+}
+
+header .logo img {
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+header .logo:hover img {
+  opacity: 1;
+}
+
+header .logo .hack {
+  margin: 10px auto;
+  position: relative;
+  width: 58px;
+  height: 58px;
+}
+
+header .logo:hover {
+  width: 250px;
+}
+
+header .logo:hover .hack span:nth-child(1):before,
+header .logo:hover .hack span:nth-child(5):before {
+  left: 14.2857142857%;
+  margin-left: -75px;
+}
+
+header .logo:hover .hack span:nth-child(2):before,
+header .logo:hover .hack span:nth-child(4):before {
+  left: 14.2857142857%;
+  margin-left: -75px;
+}
+
+header .logo:hover .hack span:nth-child(3):before {
   left: 0;
-  transform: translateY(-50%);
+  margin-left: -75px;
+}
+
+header .logo:hover .hack span:nth-child(1):after,
+header .logo:hover .hack span:nth-child(5):after {
+  right: 14.2857142857%;
+  margin-right: -75px;
+}
+
+header .logo:hover .hack span:nth-child(2):after,
+header .logo:hover .hack span:nth-child(4):after {
+  right: 14.2857142857%;
+  margin-right: -75px;
+}
+
+header .logo:hover .hack span:nth-child(3):after {
+  right: 0;
+  margin-right: -75px;
+}
+
+header .logo .hack span:before,
+header .logo .hack span:after {
+  transition: all 0.5s;
+}
+
+header .logo .hack span:nth-child(1):before {
+  content: '';
+  height: 14.2857142857%;
+  width: 28.5714285714%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+header .logo .hack span:nth-child(1):after {
+  content: '';
+  height: 14.2857142857%;
+  width: 28.5714285714%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+header .logo .hack span:nth-child(2):before {
+  content: '';
+  height: 28.5714285714%;
+  width: 14.2857142857%;
+  background-color: #fff;
+  position: absolute;
+  top: 14.2857142857%;
+  left: 14.2857142857%;
+}
+
+header .logo .hack span:nth-child(2):after {
+  content: '';
+  height: 28.5714285714%;
+  width: 14.2857142857%;
+  background-color: #fff;
+  position: absolute;
+  top: 14.2857142857%;
+  right: 14.2857142857%;
+}
+
+header .logo .hack span:nth-child(3):before {
+  content: '';
+  width: 14.2857142857%;
+  height: 14.2857142857%;
+  background-color: #fff;
+  position: absolute;
+  top: 42.8571428571%;
+  left: 28.5714285714%;
+}
+
+header .logo .hack span:nth-child(3):after {
+  content: '';
+  width: 14.2857142857%;
+  height: 14.2857142857%;
+  background-color: #fff;
+  position: absolute;
+  top: 42.8571428571%;
+  right: 28.5714285714%;
+}
+
+header .logo .hack span:nth-child(4):before {
+  content: '';
+  height: 28.5714285714%;
+  width: 14.2857142857%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 14.2857142857%;
+  left: 14.2857142857%;
+}
+
+header .logo .hack span:nth-child(4):after {
+  content: '';
+  height: 28.5714285714%;
+  width: 14.2857142857%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 14.2857142857%;
+  right: 14.2857142857%;
+}
+
+header .logo .hack span:nth-child(5):before {
+  content: '';
+  height: 14.2857142857%;
+  width: 28.5714285714%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+header .logo .hack span:nth-child(5):after {
+  content: '';
+  height: 14.2857142857%;
+  width: 28.5714285714%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 header ul {
@@ -161,7 +327,7 @@ header .btn:hover {
   top: 78px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 78px);
+  min-height: calc(100vh - 78px);
   overflow: hidden;
   text-align: center;
   color: #fff;
@@ -189,9 +355,8 @@ header .btn:hover {
 .mosaic .layer .square {
   position: relative;
   float: left;
-  width: 10vw;
-  height: 10vw;
-  border: 1px solid rgba(255,255,255,0.2);
+  width: 6.66666666667vw;
+  height: 6.66666666667vw;
 }
 
 .mosaic .layer .square .dot {
@@ -260,7 +425,7 @@ header .btn:hover {
 
 .mosaic .logo {
   width: 300px;
-  margin-top: calc(50vh - 300px);
+  margin: 30px 0;
 }
 
 .title {
@@ -270,7 +435,7 @@ header .btn:hover {
 .slogan {
   color: white;
   text-shadow: 0 1px 0 #000;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.6);
   padding: 10px 15px;
   display: inline-block;
   font-weight: normal;
