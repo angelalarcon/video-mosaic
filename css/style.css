@@ -19,7 +19,7 @@ body {
 }
 
 .mosaic video {
-  height: 100vh;
+  height: 120vh;
   width: auto;
   min-width: 100vw;
   position: absolute;
@@ -51,8 +51,8 @@ body {
   width: 10%;
   height: 10%;
   background-color: rgba(255,255,255,0.2);
-  transition: width 0.3s,
-              height 0.3s;
+  transition: width 0.5s,
+              height 0.5s;
 }
 
 .mosaic .layer .square .dot:nth-child(1) {
@@ -86,15 +86,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 0.3s,
-              background 0.3s;
+  transition: opacity 0.5s,
+              background 0.5s;
 }
 
 .mosaic .layer .square:hover .dot {
   width: 30%;
   height: 30%;
   z-index: 9998;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.7);
 }
 
 .mosaic .layer .square:hover .dot img {
@@ -121,7 +121,7 @@ body {
 .slogan {
   color: white;
   text-shadow: 0 1px 0 #000;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.5);
   padding: 10px 15px;
   display: inline-block;
   font-weight: normal;
